@@ -81,13 +81,13 @@ A complete end-to-end streaming data pipeline for real-time detection of fraudul
 
 <h2>Order of running the scripts:</h2>
 
-python ml_model.py              # Train and save the model
+python ml_model.py              : Train and save the model
 
-python transaction_producer.py # Start producing transactions
+python transaction_producer.py  : Start producing transactions
 
-python consumer.py             # Start detecting fraud
+python consumer.py              : Start detecting fraud
 
-python dashboard.py            # View live dashboard at localhost:8501
+python dashboard.py             : View live dashboard at localhost:8501
 
 
 
