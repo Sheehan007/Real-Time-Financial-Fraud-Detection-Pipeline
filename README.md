@@ -28,6 +28,7 @@ A complete end-to-end streaming data pipeline for real-time detection of fraudul
 
 
 <h2>How it works:</h2>
+
 1. Transaction Producer (transaction_producer.py)
 
     Simulates random banking transactions and pushes them to a Kafka topic named transactions.
