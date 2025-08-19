@@ -7,6 +7,6 @@ Tech Stack:
 1. Ingestion: Apache Kafka (Python kafka client)
 2. Processing: Python (kafka consumer), scikit-learn
 3. Detection: ML Model (RandomForestClassifier)
-4. Alerting: Slack Webhook via <div>alert_service.py</div>
+4. Alerting: Slack Webhook via  This is <span style="background-color: lightgrey;">alert_service.py</span>
 5. Dashboard:
 6. Storage: 
