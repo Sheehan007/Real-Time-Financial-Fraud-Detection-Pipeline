@@ -7,6 +7,16 @@ Tech Stack:
 1. Ingestion: Apache Kafka (Python kafka client)
 2. Processing: Python (kafka consumer), scikit-learn
 3. Detection: ML Model (RandomForestClassifier)
-4. Alerting: Slack Webhook via  This is <span style="background-color: lightgrey;">alert_service.py</span>
-5. Dashboard:
-6. Storage: 
+4. Alerting: Slack Webhook via alert_service.py
+5. Dashboard: Streamlit Dashbaord
+6. Storage: CSV file (farud_logs_2.csv) for logging
+
+
+Project Objective
+
+- To simulate a banking system that detects fraudulent transactions in real-time using stream processing and machine learning, while:
+- Streaming thousands of simulated transactions per minute
+- Identifying anomalies or suspicious patterns
+- Triggering alerts instantly (via Slack)
+- Logging the events
+- Visualizing activity on a real-time dashboard
