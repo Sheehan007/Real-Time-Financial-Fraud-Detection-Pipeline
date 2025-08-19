@@ -30,50 +30,50 @@ A complete end-to-end streaming data pipeline for real-time detection of fraudul
 <h2>How it works:</h2>
 1. Transaction Producer (transaction_producer.py)
 
-Simulates random banking transactions and pushes them to a Kafka topic named transactions.
+    Simulates random banking transactions and pushes them to a Kafka topic named transactions.
 
-Includes fields like:
+    Includes fields like:
     
-    -transaction_id, user_id, amount, location, timestamp
+        -transaction_id, user_id, amount, location, timestamp
 
-Runs continuously with a small delay (e.g., 0.5 seconds)
+    Runs continuously with a small delay (e.g., 0.5 seconds)
 
 2. ML Fraud Detection Model (ml_model.py)
 
-Trains a RandomForestClassifier using labeled transaction data (legit or fraud) and saves the model as rf_fraud_model.pkl.
+    Trains a RandomForestClassifier using labeled transaction data (legit or fraud) and saves the model as rf_fraud_model.pkl.
 
 
 3. Kafka Consumer + Fraud Checker (consumer.py)
 
-Consumes incoming transactions, extracts features, and passes them to the trained model.
+    Consumes incoming transactions, extracts features, and passes them to the trained model.
 
-If classified as fraud:
+    If classified as fraud:
     
-    -Sends a Slack alert via alert_service.py
+        -Sends a Slack alert via alert_service.py
     
-    -Appends the transaction to fraud_logs.csv
+        -Appends the transaction to fraud_logs.csv
 
-Else:
+    Else:
     
-    -Logs as legit in the console
+        -Logs as legit in the console
 
 
 4. Slack Alerts (alert_service.py)
 
-Uses a Slack webhook to notify the team instantly when a fraudulent transaction is detected.
+    Uses a Slack webhook to notify the team instantly when a fraudulent transaction is detected.
 
 
 5. Streamlit Dashboard (dashboard.py)
 
-Displays transactions detected as fraud in real-time using the fraud_logs.csv.
-
-Visualizations include:
-
-    -Count of frauds over time
+    Displays transactions detected as fraud in real-time using the fraud_logs.csv.
     
-    -Location-wise fraud heatmap
+    Visualizations include:
     
-    -User-wise fraud history
+        -Count of frauds over time
+        
+        -Location-wise fraud heatmap
+        
+        -User-wise fraud history
 
 
 
